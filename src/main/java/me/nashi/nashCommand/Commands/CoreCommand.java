@@ -33,8 +33,14 @@ class CoreCommand extends Command {
 
         if (args.length > 0) {
             for (int i = 0; i < getSubCommands().size(); i++) {
+                SubCommand target = getSubCommands().get(i);
                 if (args[0].equalsIgnoreCase(getSubCommands().get(i).getName()) || (getSubCommands().get(i).getAliases() != null && getSubCommands().get(i).getAliases().contains(args[0]))) {
-                    getSubCommands().get(i).perform(sender, args);
+                    if (target.getPermission() != null && !sender.hasPermission(target.getPermission())) {
+                        sender.sendMessage("§cYou do not have permission to use this command.");
+                        return true;
+                    }
+                    target.perform(sender, args);
+                    return true; // Return true agar loop berhenti setelah command ditemukan
                 }
             }
         } else {
