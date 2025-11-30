@@ -1,0 +1,4 @@
+name: NashCommand
+version: '1.0'
+main: me.nashi.nashCommand.NashUtils
+api-version: '1.21'
