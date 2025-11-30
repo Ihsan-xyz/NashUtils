@@ -27,7 +27,7 @@ public abstract class SubCommand {
     public abstract String getDescription();
 
     /**
-     * @return Permission node yang dibutuhkan untuk command ini.
+     * @return Permission yang dibutuhkan untuk command ini.
      * Return null jika tidak ada permission khusus.
      */
     public abstract String getPermission();
