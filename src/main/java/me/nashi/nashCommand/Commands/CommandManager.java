@@ -1,5 +1,7 @@
 package me.nashi.nashCommand.Commands;
 
+import org.bukkit.Bukkit;
+import org.bukkit.command.Command;
 import org.bukkit.command.CommandMap;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.Nullable;
@@ -66,6 +68,26 @@ public class CommandManager {
                                          @Nullable CommandList commandList,
                                          Class<? extends SubCommand>... subcommands) throws NoSuchFieldException, IllegalAccessException {
         createCoreCommand(plugin, commandName, commandDescription, commandUsage, commandList, Collections.singletonList(""), subcommands);
+    }
+
+    /**
+     * Menghapus command dari CommandMap server.
+     * Panggil ini di onDisable plugin Anda.
+     */
+    public static void unregisterCommand(String commandName) {
+        try {
+            Field commandField = Bukkit.getServer().getClass().getDeclaredField("commandMap");
+            commandField.setAccessible(true);
+            CommandMap commandMap = (CommandMap) commandField.get(Bukkit.getServer());
+
+            Command cmd = commandMap.getCommand(commandName);
+            if (cmd != null) {
+                // Unregister command dari map (menghapus command dan aliasnya)
+                cmd.unregister(commandMap);
+            }
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
     }
 
 }
