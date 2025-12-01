@@ -1,4 +1,4 @@
-package me.nashi.nashCommand.Commands;
+package com.github.nashutils.Commands;
 
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;

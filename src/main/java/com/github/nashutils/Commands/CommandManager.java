@@ -1,4 +1,4 @@
-package me.nashi.nashCommand.Commands;
+package com.github.nashutils.Commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;

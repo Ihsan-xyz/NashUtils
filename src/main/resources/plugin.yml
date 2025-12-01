@@ -1,4 +1,4 @@
-name: NashCommand
+name: NashUtils
 version: '1.0'
-main: me.nashi.nashCommand.NashUtils
+main: com.github.nashutils.NashUtils
 api-version: '1.21'

@@ -1,4 +1,4 @@
-package me.nashi.nashCommand;
+package com.github.nashutils;
 
 import org.bukkit.plugin.java.JavaPlugin;
 

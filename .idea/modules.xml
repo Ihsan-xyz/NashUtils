@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/NashCommand.iml" filepath="$PROJECT_DIR$/NashCommand.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NashUtils.iml" filepath="$PROJECT_DIR$/NashUtils.iml" />
     </modules>
   </component>
 </project>
