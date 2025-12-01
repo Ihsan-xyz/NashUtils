@@ -30,3 +30,14 @@ NashUtils tersedia melalui **JitPack**. Tambahkan ini ke `pom.xml` plugin Anda:
         <url>[https://jitpack.io](https://jitpack.io)</url>
     </repository>
 </repositories>
+```
+
+### 2. Tambahkan Dependency
+```xml
+<dependencies>
+    <dependency>
+        <groupId>com.github.UsernameGitHubAnda</groupId> <artifactId>NashUtils</artifactId>
+        <version>TagRelease</version> <scope>provided</scope>
+    </dependency>
+</dependencies>
+```
