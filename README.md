@@ -36,7 +36,7 @@ NashUtils tersedia melalui **JitPack**. Tambahkan ini ke `pom.xml` plugin Anda:
 ```xml
 <dependencies>
     <dependency>
-        <groupId>com.github.UsernameGitHubAnda</groupId> <artifactId>NashUtils</artifactId>
+        <groupId>com.github.Ihsan-xyz</groupId> <artifactId>NashUtils</artifactId>
         <version>TagRelease</version> <scope>provided</scope>
     </dependency>
 </dependencies>
