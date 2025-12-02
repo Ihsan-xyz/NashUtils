@@ -65,13 +65,20 @@ class CoreCommand extends Command {
 
             //Does the subcommand autocomplete
             for (int i = 0; i < getSubCommands().size(); i++) {
-                subcommandsArguments.add(getSubCommands().get(i).getName());
+                SubCommand sub = getSubCommands().get(i);
+                if (sub.getPermission() == null || sender.hasPermission(sub.getPermission())) {
+                    subcommandsArguments.add(sub.getName());
+                }
             }
             return subcommandsArguments;
         } else if (args.length >= 2) {
             for (int i = 0; i < getSubCommands().size(); i++) {
-                if (args[0].equalsIgnoreCase(getSubCommands().get(i).getName())) {
-                    List<String> subCommandArgs = getSubCommands().get(i).getSubcommandArguments(
+                SubCommand sub = getSubCommands().get(i);
+                if (args[0].equalsIgnoreCase(sub.getName())) {
+                    if (sub.getPermission() != null && !sender.hasPermission(sub.getPermission())) {
+                        return Collections.emptyList();
+                    }
+                    List<String> subCommandArgs = sub.getSubcommandArguments(
                             (Player) sender, args
                     );
 
